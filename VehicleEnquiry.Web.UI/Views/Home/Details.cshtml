@@ -1,0 +1,102 @@
+﻿@model VehicleEnquiry.Web.UI.ViewModel.VehicleDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="container" style="margin-top: 60px">
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Vehicle Details</div>
+                <div class="panel-body">
+                    <h2>@Html.DisplayFor(model => model.Details.Title)</h2>
+
+                    <div>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Details.Make)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Details.Make)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Details.Model)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Details.Model)
+                            </dd>
+
+                           
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Details.Email)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Details.Email)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Details.Price)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Details.Price)
+                            </dd>
+                            @if (!String.IsNullOrEmpty(Model.Details.PriceLabel))
+                            {
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Details.PriceLabel)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Details.PriceLabel)
+                                </dd>
+                            }
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Details.SellerInformation)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Details.SellerInformation)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Details.Comments)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Details.Comments)
+                            </dd>
+
+                        </dl>
+                    </div>
+                    <div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="panel panel-info">
+                <div class="panel-heading">Add new Enquiry</div>
+                <div class="panel-body">
+                    @Html.Partial("NewEnquiry", Model.Enquiry)
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+</div>
